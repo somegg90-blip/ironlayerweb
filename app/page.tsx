@@ -121,7 +121,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-platinum/40 text-sm">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <Shield className="w-4 h-4 text-electric" /> 
-            <span>© 2024 IronLayer. All rights reserved.</span>
+            <span>© 2026 IronLayer. All rights reserved.</span>
           </div>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-platinum transition-colors">Privacy</Link>
