@@ -4,15 +4,32 @@ import { supabase } from '@/lib/supabase'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, message } = body
+    
+    // Destructure all fields
+    const { 
+      name, 
+      email, 
+      company_size, 
+      agent_count, 
+      data_types, 
+      challenge 
+    } = body
 
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+    if (!name || !email) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
+    // Insert into Supabase
     const { error } = await supabase
       .from('contacts')
-      .insert([{ name, email, message }])
+      .insert([{ 
+        name, 
+        email, 
+        company_size,
+        agent_count,
+        data_types,
+        challenge
+      }])
 
     if (error) {
       console.error('Supabase Error:', error)

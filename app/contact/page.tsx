@@ -11,13 +11,11 @@ export default function ContactPage() {
     setLoading(true)
     
     const formData = new FormData(e.currentTarget)
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
-    const message = formData.get('message') as string
+    const data = Object.fromEntries(formData.entries())
 
     const res = await fetch('/api/contact', {
       method: 'POST',
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify(data),
       headers: { 'Content-Type': 'application/json' }
     })
 
@@ -33,18 +31,30 @@ export default function ContactPage() {
     <main className="min-h-screen grid-bg pt-24 px-6">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 gradient-text">Get in Touch</h1>
-          <p className="text-platinum/60">Have a question? We are here to help.</p>
+          <h1 className="text-4xl font-bold mb-4 gradient-text">Let's Secure Your Agents</h1>
+          <p className="text-platinum/60">Tell us about your setup. We'll help you lock it down.</p>
         </div>
 
         <div className="glass-card p-8 rounded-xl border border-white/10">
           {submitted ? (
             <div className="text-center py-8">
-              <h3 className="text-xl font-semibold mb-2 text-electric">Message Received</h3>
-              <p className="text-platinum/60">Our team will contact you within 24 hours.</p>
+              <h3 className="text-xl font-semibold mb-2 text-electric">Request Received</h3>
+              <p className="text-platinum/60 mb-6">Thanks for the details. You can now book a time slot directly.</p>
+              
+              <a 
+                href="https://calendly.com/medicalpremed/30min" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block w-full"
+              >
+                <Button variant="primary" className="w-full">
+                  Book a Time Slot
+                </Button>
+              </a>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
+              {/* Name */}
               <div>
                 <label className="block text-sm font-medium text-platinum/80 mb-2">Name</label>
                 <input 
@@ -56,6 +66,8 @@ export default function ContactPage() {
                   placeholder="Jane Doe"
                 />
               </div>
+
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium text-platinum/80 mb-2">Work Email</label>
                 <input 
@@ -67,19 +79,70 @@ export default function ContactPage() {
                   placeholder="jane@company.com"
                 />
               </div>
+
+              {/* Company Size */}
               <div>
-                <label className="block text-sm font-medium text-platinum/80 mb-2">Message</label>
-                <textarea 
-                  name="message"
-                  rows={4}
+                <label className="block text-sm font-medium text-platinum/80 mb-2">Company Size</label>
+                <select 
+                  name="company_size"
+                  required
+                  defaultValue="" // FIXED: Use defaultValue here
+                  suppressHydrationWarning
+                  className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:border-electric transition-colors appearance-none"
+                >
+                  <option value="" disabled>Select size</option>
+                  <option value="1-10">1-10 (Startup)</option>
+                  <option value="11-50">11-50 (Growing)</option>
+                  <option value="51-200">51-200 (Mid-Market)</option>
+                  <option value="200+">200+ (Enterprise)</option>
+                </select>
+              </div>
+
+              {/* Agent Count */}
+              <div>
+                <label className="block text-sm font-medium text-platinum/80 mb-2">How many AI Agents are you running?</label>
+                <select 
+                  name="agent_count"
+                  required
+                  defaultValue="" // FIXED: Use defaultValue here
+                  suppressHydrationWarning
+                  className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:border-electric transition-colors appearance-none"
+                >
+                  <option value="" disabled>Select range</option>
+                  <option value="0">None (Just Planning)</option>
+                  <option value="1-5">1-5 (Experimenting)</option>
+                  <option value="6-20">6-20 (Scaling)</option>
+                  <option value="20+">20+ (Production)</option>
+                </select>
+              </div>
+
+              {/* Data Types */}
+              <div>
+                <label className="block text-sm font-medium text-platinum/80 mb-2">What data types are you handling?</label>
+                <input 
+                  name="data_types"
+                  type="text" 
                   required
                   suppressHydrationWarning
+                  className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:border-electric transition-colors"
+                  placeholder="e.g., Customer PII, Financial Logs, Medical Records"
+                />
+              </div>
+
+              {/* Challenge */}
+              <div>
+                <label className="block text-sm font-medium text-platinum/80 mb-2">Biggest Security Fear?</label>
+                <textarea 
+                  name="challenge"
+                  rows={3}
+                  suppressHydrationWarning
                   className="w-full bg-obsidian border border-white/10 rounded-lg px-4 py-3 text-platinum focus:outline-none focus:border-electric transition-colors resize-none"
-                  placeholder="Tell us about your security needs..."
+                  placeholder="e.g., Agents leaking API keys to logs..."
                 ></textarea>
               </div>
+
               <Button type="submit" variant="primary" disabled={loading} className="w-full py-4">
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? "Submitting..." : "Request Consultation"}
               </Button>
             </form>
           )}
