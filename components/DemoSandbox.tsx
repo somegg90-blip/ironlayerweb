@@ -75,7 +75,7 @@ export function DemoSandbox() {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-platinum">Live PII Scrubbing Demo</h3>
-            <p className="text-xs text-platinum/50">See IronLayer detect & redact sensitive data in real-time</p>
+            <p className="text-xs text-platinum/50">See QuiGuard detect & redact sensitive data in real-time</p>
           </div>
         </div>
 
@@ -140,7 +140,7 @@ export function DemoSandbox() {
             <div className="flex items-center justify-center gap-2 p-3 rounded-lg bg-electric/5 border border-electric/10">
               <Shield className="w-4 h-4 text-electric" aria-hidden="true" />
               <p className="text-xs text-platinum/60">
-                <strong className="text-electric">IronLayer Proxy:</strong> Real data never leaves your infrastructure.
+                <strong className="text-electric">QuiGuard Proxy:</strong> Real data never leaves your infrastructure.
               </p>
             </div>
             
@@ -154,7 +154,7 @@ export function DemoSandbox() {
         {/* AEO Microcopy: What This Demo Shows */}
         <div className="mt-6 pt-6 border-t border-white/5">
           <p className="text-xs text-platinum/40 text-center">
-            <strong className="text-platinum/60">Demo Note:</strong> This client-side simulation shows IronLayer's PII detection patterns. 
+            <strong className="text-platinum/60">Demo Note:</strong> This client-side simulation shows QuiGuard's PII detection patterns. 
             In production, scrubbing happens server-side via the proxy with enterprise-grade NLP, custom regex, and policy enforcement.
           </p>
         </div>

@@ -15,7 +15,7 @@ const tiers = [
       { text: "SSO & SAML", included: false },
     ],
     cta: "Get Started",
-    link: "https://github.com/somegg90-blip/ironlayer-gateway",
+    link: "https://github.com/somegg90-blip/QuiGuard-gateway",
     highlight: false
   },
   {
@@ -212,7 +212,7 @@ export default function PricingPage() {
                 <span className="transition-transform group-open:rotate-180">▼</span>
               </summary>
               <p className="mt-3 text-platinum/60 text-sm">
-                We offer a "Success Guarantee": if we cannot get IronLayer running in your environment within the session, we'll continue working asynchronously until it's resolved, or refund 50% of the fee.
+                We offer a "Success Guarantee": if we cannot get QuiGuard running in your environment within the session, we'll continue working asynchronously until it's resolved, or refund 50% of the fee.
               </p>
             </details>
             

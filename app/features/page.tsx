@@ -30,7 +30,7 @@ const features = [
   {
     icon: <Zap className="w-6 h-6" />,
     title: "Self-Hosted & Air-Gapped",
-    description: "Run IronLayer entirely within your own VPC. Your data never touches our servers. Perfect for high-compliance industries."
+    description: "Run QuiGuard entirely within your own VPC. Your data never touches our servers. Perfect for high-compliance industries."
   }
 ]
 

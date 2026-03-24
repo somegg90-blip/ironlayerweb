@@ -21,7 +21,7 @@ export default function DocsPage() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">Documentation</h1>
-          <p className="text-platinum/60">Get IronLayer running in your environment in under 5 minutes.</p>
+          <p className="text-platinum/60">Get QuiGuard running in your environment in under 5 minutes.</p>
         </div>
 
         <div className="glass-card p-8 rounded-xl mb-8">
@@ -30,7 +30,7 @@ export default function DocsPage() {
           </h2>
           <p className="text-platinum/80 mb-4 text-sm">The fastest way to get started is using Docker.</p>
           <h3 className="text-lg font-medium mb-2 text-platinum">1. Clone & Configure</h3>
-          <CodeBlock>{`git clone https://github.com/somegg90-blip/ironlayer-gateway.git\ncd ironlayer-gateway\necho "API_KEY=your_openrouter_key" > .env`}</CodeBlock>
+          <CodeBlock>{`git clone https://github.com/somegg90-blip/QuiGuard-gateway.git\ncd QuiGuard-gateway\necho "API_KEY=your_openrouter_key" > .env`}</CodeBlock>
           <h3 className="text-lg font-medium mb-2 mt-6 text-platinum">2. Run</h3>
           <CodeBlock>{`docker-compose up -d`}</CodeBlock>
           <p className="text-platinum/60 text-sm mt-4">Your proxy is now running at <span className="text-electric font-mono">http://localhost:8000</span>.</p>

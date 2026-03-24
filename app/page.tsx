@@ -8,28 +8,28 @@ import Head from "next/head";
 // AEO-Optimized FAQ Data with Schema-Ready Structure
 const faqs = [
   {
-    question: "What is IronLayer?",
-    answer: "IronLayer is a self-hosted AI security proxy that automatically scrubs PII (personally identifiable information) from prompts, responses, and tool calls before data leaves your network. It acts as a zero-trust gatekeeper for AI agent communications."
+    question: "What is QuiGuard?",
+    answer: "QuiGuard is a self-hosted AI security proxy that automatically scrubs PII (personally identifiable information) from prompts, responses, and tool calls before data leaves your network. It acts as a zero-trust gatekeeper for AI agent communications."
   },
   {
-    question: "How does IronLayer protect AI agent data?",
-    answer: "IronLayer operates as a reverse proxy between your application and LLM providers. It intercepts all traffic, redacts sensitive data using pattern matching and NLP, enforces guardrails on tool usage, and logs audit trails—all without storing your raw data."
+    question: "How does QuiGuard protect AI agent data?",
+    answer: "QuiGuard operates as a reverse proxy between your application and LLM providers. It intercepts all traffic, redacts sensitive data using pattern matching and NLP, enforces guardrails on tool usage, and logs audit trails—all without storing your raw data."
   },
   {
-    question: "Is IronLayer compliant with GDPR, HIPAA, or SOC 2?",
-    answer: "Yes. IronLayer is designed to help you meet compliance requirements by preventing PII exposure at the source. Self-hosted deployments keep all data and logs within your infrastructure. Cloud deployments process data in-memory only and never store raw PII."
+    question: "Is QuiGuard compliant with GDPR, HIPAA, or SOC 2?",
+    answer: "Yes. QuiGuard is designed to help you meet compliance requirements by preventing PII exposure at the source. Self-hosted deployments keep all data and logs within your infrastructure. Cloud deployments process data in-memory only and never store raw PII."
   },
   {
-    question: "Can I use IronLayer with any LLM provider?",
-    answer: "IronLayer is provider-agnostic. It works with OpenAI, Anthropic, Google Vertex, Azure OpenAI, and any OpenAI-compatible API endpoint via standard HTTP proxy configuration."
+    question: "Can I use QuiGuard with any LLM provider?",
+    answer: "QuiGuard is provider-agnostic. It works with OpenAI, Anthropic, Google Vertex, Azure OpenAI, and any OpenAI-compatible API endpoint via standard HTTP proxy configuration."
   },
   {
-    question: "How do I deploy IronLayer?",
-    answer: "Deploy in under 5 minutes using Docker: `docker run -p 3000:3000 ironlayer/gateway`. Configure your AI application to route requests through `http://localhost:3000`. No code changes required beyond endpoint redirection."
+    question: "How do I deploy QuiGuard?",
+    answer: "Deploy in under 5 minutes using Docker: `docker run -p 3000:3000 QuiGuard/gateway`. Configure your AI application to route requests through `http://localhost:3000`. No code changes required beyond endpoint redirection."
   },
   {
-    question: "What types of PII does IronLayer detect and scrub?",
-    answer: "IronLayer detects and redacts emails, phone numbers, credit cards, SSNs, IP addresses, API keys, custom regex patterns, and context-aware entities like names + addresses. Custom detectors can be added via configuration."
+    question: "What types of PII does QuiGuard detect and scrub?",
+    answer: "QuiGuard detects and redacts emails, phone numbers, credit cards, SSNs, IP addresses, API keys, custom regex patterns, and context-aware entities like names + addresses. Custom detectors can be added via configuration."
   }
 ];
 
@@ -51,7 +51,7 @@ const faqSchema = {
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "IronLayer",
+  "name": "QuiGuard",
   "applicationCategory": "SecurityApplication",
   "operatingSystem": "Linux, macOS, Windows (via Docker)",
   "offers": {
@@ -69,7 +69,7 @@ const softwareSchema = {
     "Provider-agnostic API proxy"
   ],
   "softwareVersion": "1.0",
-  "downloadUrl": "https://github.com/somegg90-blip/ironlayer-gateway",
+  "downloadUrl": "https://github.com/somegg90-blip/QuiGuard-gateway",
   "license": "MIT"
 };
 
@@ -77,16 +77,16 @@ const softwareSchema = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "IronLayer",
-  "url": "https://ironlayer.dev",
-  "logo": "https://ironlayer.dev/logo.png",
+  "name": "QuiGuard",
+  "url": "https://QuiGuard.dev",
+  "logo": "https://QuiGuard.dev/logo.png",
   "sameAs": [
-    "https://github.com/somegg90-blip/ironlayer-gateway"
+    "https://github.com/somegg90-blip/QuiGuard-gateway"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "email": "sales@ironlayer.dev"
+    "email": "sales@QuiGuard.dev"
   }
 };
 
@@ -95,24 +95,24 @@ export default function Home() {
     <>
       <Head>
         {/* Primary SEO Meta Tags */}
-        <title>IronLayer | Self-Hosted AI Security Proxy for PII Scrubbing & Agent Guardrails</title>
-        <meta name="description" content="IronLayer is the zero-trust security proxy for AI agents. Automatically scrub PII from prompts, responses, and tool calls. Self-hosted or cloud. Deploy in 5 minutes. GDPR, HIPAA ready." />
+        <title>QuiGuard | Self-Hosted AI Security Proxy for PII Scrubbing & Agent Guardrails</title>
+        <meta name="description" content="QuiGuard is the zero-trust security proxy for AI agents. Automatically scrub PII from prompts, responses, and tool calls. Self-hosted or cloud. Deploy in 5 minutes. GDPR, HIPAA ready." />
         <meta name="keywords" content="AI security, PII scrubbing, AI proxy, agent guardrails, enterprise AI compliance, self-hosted AI, LLM security, data privacy, GDPR AI, HIPAA AI" />
         
         {/* Open Graph / Social */}
-        <meta property="og:title" content="IronLayer | The Safety Layer For AI Agents" />
+        <meta property="og:title" content="QuiGuard | The Safety Layer For AI Agents" />
         <meta property="og:description" content="Self-hosted security proxy that scrubs PII from prompts, responses, and tool calls. Protect your data before it leaves your network." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ironlayer.dev" />
-        <meta property="og:image" content="https://ironlayer.dev/og-image.png" />
+        <meta property="og:url" content="https://QuiGuard.dev" />
+        <meta property="og:image" content="https://QuiGuard.dev/og-image.png" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="IronLayer | AI Security Proxy" />
+        <meta name="twitter:title" content="QuiGuard | AI Security Proxy" />
         <meta name="twitter:description" content="Scrub PII, enforce guardrails, audit AI agent traffic. Zero-trust proxy for enterprise AI." />
         
         {/* Canonical & Robots */}
-        <link rel="canonical" href="https://ironlayer.dev" />
+        <link rel="canonical" href="https://QuiGuard.dev" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         
         {/* Structured Data JSON-LD */}
@@ -135,7 +135,7 @@ export default function Home() {
 
       <main className="min-h-screen grid-bg relative" itemScope itemType="https://schema.org/SoftwareApplication">
         {/* Schema Microdata for Core Product */}
-        <meta itemProp="name" content="IronLayer" />
+        <meta itemProp="name" content="QuiGuard" />
         <meta itemProp="applicationCategory" content="SecurityApplication" />
         <meta itemProp="description" content="Self-hosted AI security proxy that scrubs PII from prompts, responses, and tool calls" />
         
@@ -148,21 +148,21 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2 text-xl font-bold" itemProp="brand" itemScope itemType="https://schema.org/Organization">
               <Shield className="w-6 h-6 text-electric" aria-hidden="true" />
-              <span itemProp="name">IronLayer</span>
-              <meta itemProp="url" content="https://ironlayer.dev" />
+              <span itemProp="name">QuiGuard</span>
+              <meta itemProp="url" content="https://QuiGuard.dev" />
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm text-platinum/70">
-              <Link href="#features" className="hover:text-platinum transition-colors" aria-label="View IronLayer features">Features</Link>
-              <Link href="#architecture" className="hover:text-platinum transition-colors" aria-label="Learn about IronLayer security architecture">Architecture</Link>
+              <Link href="#features" className="hover:text-platinum transition-colors" aria-label="View QuiGuard features">Features</Link>
+              <Link href="#architecture" className="hover:text-platinum transition-colors" aria-label="Learn about QuiGuard security architecture">Architecture</Link>
               <Link href="#faq" className="hover:text-platinum transition-colors" aria-label="View frequently asked questions">FAQ</Link>
-              <Link href="/pricing" className="hover:text-platinum transition-colors" aria-label="View IronLayer pricing plans">Pricing</Link>
-              <Link href="/docs" className="hover:text-platinum transition-colors" aria-label="Read IronLayer documentation">Docs</Link>
+              <Link href="/pricing" className="hover:text-platinum transition-colors" aria-label="View QuiGuard pricing plans">Pricing</Link>
+              <Link href="/docs" className="hover:text-platinum transition-colors" aria-label="Read QuiGuard documentation">Docs</Link>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="https://github.com/somegg90-blip/ironlayer-gateway" target="_blank" rel="noopener noreferrer" aria-label="View IronLayer on GitHub">
+              <Link href="https://github.com/somegg90-blip/QuiGuard-gateway" target="_blank" rel="noopener noreferrer" aria-label="View QuiGuard on GitHub">
                 <Button variant="ghost" className="p-2"><Github className="w-5 h-5" /></Button>
               </Link>
-              <Link href="/contact"><Button variant="secondary" aria-label="Contact IronLayer sales team">Contact Sales</Button></Link>
+              <Link href="/contact"><Button variant="secondary" aria-label="Contact QuiGuard sales team">Contact Sales</Button></Link>
             </div>
           </div>
         </nav>
@@ -183,13 +183,13 @@ export default function Home() {
             
             {/* Concise Answer-Style Description for Featured Snippets */}
             <p className="text-lg md:text-xl text-platinum/60 max-w-2xl mx-auto mb-10 leading-relaxed" itemProp="description">
-              IronLayer is the self-hosted security proxy that automatically scrubs PII from prompts, responses, and tool calls. 
+              QuiGuard is the self-hosted security proxy that automatically scrubs PII from prompts, responses, and tool calls. 
               <strong> Protect sensitive enterprise data before it leaves your network</strong>—with zero configuration changes to your AI stack.
             </p>
             
             {/* Primary CTAs with Clear Intent */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="https://github.com/somegg90-blip/ironlayer-gateway" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/somegg90-blip/QuiGuard-gateway" target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" className="w-full sm:w-auto px-8 py-4 text-base group" itemProp="downloadUrl">
                   Deploy in 5 Mins
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -216,9 +216,9 @@ export default function Home() {
         <section id="features" className="py-24 px-6" aria-labelledby="features-heading">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              {/* AEO-Optimized H2: Answers "What security does IronLayer provide?" */}
+              {/* AEO-Optimized H2: Answers "What security does QuiGuard provide?" */}
               <h2 id="features-heading" className="text-3xl md:text-4xl font-bold mb-4">
-                What Security Does IronLayer Provide for AI Agents?
+                What Security Does QuiGuard Provide for AI Agents?
               </h2>
               <p className="text-platinum/60 max-w-xl mx-auto">
                 Built for developers. Ready for enterprise compliance. Three core capabilities that close critical AI security gaps.
@@ -249,12 +249,12 @@ export default function Home() {
         <section id="architecture" className="py-24 px-6 border-t border-white/5" aria-labelledby="architecture-heading">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              {/* Direct Answer to "How does IronLayer work?" */}
+              {/* Direct Answer to "How does QuiGuard work?" */}
               <h2 id="architecture-heading" className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-                How Does IronLayer Protect AI Data?
+                How Does QuiGuard Protect AI Data?
               </h2>
               <p className="text-platinum/60 text-lg">
-                IronLayer uses a zero-trust proxy architecture to secure data without ever seeing your raw information.
+                QuiGuard uses a zero-trust proxy architecture to secure data without ever seeing your raw information.
               </p>
             </div>
 
@@ -262,14 +262,14 @@ export default function Home() {
             <div className="glass-card p-8 rounded-xl mb-8" itemProp="processingMethod">
               <h3 className="text-xl font-semibold mb-4 text-platinum">The Zero-Trust Proxy Model</h3>
               <p className="text-platinum/70 leading-relaxed">
-                IronLayer operates as a <strong className="text-platinum">reverse proxy</strong> between your application and any LLM provider. 
+                QuiGuard operates as a <strong className="text-platinum">reverse proxy</strong> between your application and any LLM provider. 
                 It intercepts all traffic, redacts sensitive data using pattern matching + NLP, enforces policy guardrails, 
                 and forwards only sanitized requests—ensuring <strong>no PII leaves your controlled environment</strong>.
               </p>
             </div>
 
             {/* Visual Data Flow - Semantic Structure for Voice Search */}
-            <div className="glass-card p-8 rounded-xl mb-8" aria-label="IronLayer data flow diagram">
+            <div className="glass-card p-8 rounded-xl mb-8" aria-label="QuiGuard data flow diagram">
               <h3 className="text-xl font-semibold mb-6 text-center text-platinum">Data Flow: From Prompt to Response</h3>
               
               <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
@@ -284,12 +284,12 @@ export default function Home() {
 
                 <ArrowRight className="hidden md:block text-platinum/20 rotate-90 md:rotate-0" aria-hidden="true" />
 
-                {/* Step 2 - IronLayer Processing */}
+                {/* Step 2 - QuiGuard Processing */}
                 <div className="flex flex-col items-center p-4 w-full md:w-1/4 border-x border-white/5">
                   <div className="w-12 h-12 rounded-full bg-electric/10 border border-electric/20 flex items-center justify-center mb-3 text-electric" aria-hidden="true">
                     <Lock className="w-6 h-6" />
                   </div>
-                  <h4 className="font-semibold text-platinum">2. IronLayer Scrubs</h4>
+                  <h4 className="font-semibold text-platinum">2. QuiGuard Scrubs</h4>
                   <p className="text-xs text-platinum/50 mt-1"><strong className="text-electric">REDACTS:</strong> "My email is &lt;EMAIL_1&gt;"</p>
                 </div>
 
@@ -307,7 +307,7 @@ export default function Home() {
 
               <div className="mt-8 p-4 bg-obsidian rounded-lg border border-white/5">
                 <p className="text-center text-sm text-platinum/60">
-                  <strong className="text-electric">Return Trip:</strong> AI replies with placeholder. IronLayer restores original values before delivery—<span className="text-platinum">your data never exposed to third parties</span>.
+                  <strong className="text-electric">Return Trip:</strong> AI replies with placeholder. QuiGuard restores original values before delivery—<span className="text-platinum">your data never exposed to third parties</span>.
                 </p>
               </div>
             </div>
@@ -320,7 +320,7 @@ export default function Home() {
                 <ul className="space-y-2 text-sm text-platinum/60">
                   <li className="flex items-start gap-2">
                     <Shield className="w-4 h-4 text-green-400 mt-0.5 shrink-0" aria-hidden="true" /> 
-                    <span><strong className="text-platinum">Zero Access:</strong> IronLayer developers cannot see your traffic or logs.</span>
+                    <span><strong className="text-platinum">Zero Access:</strong> QuiGuard developers cannot see your traffic or logs.</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Shield className="w-4 h-4 text-green-400 mt-0.5 shrink-0" aria-hidden="true" /> 
@@ -369,7 +369,7 @@ export default function Home() {
                 Frequently Asked Questions About AI Security
               </h2>
               <p className="text-platinum/60">
-                Direct answers to common questions about IronLayer, AI data protection, and enterprise compliance.
+                Direct answers to common questions about QuiGuard, AI data protection, and enterprise compliance.
               </p>
             </div>
 
@@ -394,16 +394,16 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Additional AEO Content: "Why Choose IronLayer" Comparison */}
+            {/* Additional AEO Content: "Why Choose QuiGuard" Comparison */}
             <div className="mt-16 glass-card p-8 rounded-xl">
               <h3 className="text-2xl font-bold mb-6 text-center text-platinum">
-                Why Security Teams Choose IronLayer
+                Why Security Teams Choose QuiGuard
               </h3>
               <div className="grid md:grid-cols-2 gap-6 text-platinum/70">
                 <div>
                   <h4 className="font-semibold text-platinum mb-3 flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-electric" /> 
-                    Before IronLayer
+                    Before QuiGuard
                   </h4>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
@@ -423,7 +423,7 @@ export default function Home() {
                 <div>
                   <h4 className="font-semibold text-platinum mb-3 flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" /> 
-                    With IronLayer
+                    With QuiGuard
                   </h4>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2">
@@ -453,22 +453,22 @@ export default function Home() {
               Ready to Secure Your AI Stack?
             </h2>
             <p className="text-platinum/60 mb-8">
-              Join enterprise teams using IronLayer to deploy AI agents with confidence. 
+              Join enterprise teams using QuiGuard to deploy AI agents with confidence. 
               Start free with open-source, or schedule a pilot for advanced compliance features.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/pricing">
-                <Button variant="primary" className="px-8" aria-label="View IronLayer pricing and plans">
+                <Button variant="primary" className="px-8" aria-label="View QuiGuard pricing and plans">
                   View Pricing
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="ghost" className="px-8" aria-label="Contact IronLayer for enterprise demo">
+                <Button variant="ghost" className="px-8" aria-label="Contact QuiGuard for enterprise demo">
                   Contact Us
                 </Button>
               </Link>
-              <Link href="https://github.com/somegg90-blip/ironlayer-gateway" target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary" className="px-8" aria-label="View IronLayer source code on GitHub">
+              <Link href="https://github.com/somegg90-blip/QuiGuard-gateway" target="_blank" rel="noopener noreferrer">
+                <Button variant="secondary" className="px-8" aria-label="View QuiGuard source code on GitHub">
                   View on GitHub
                 </Button>
               </Link>
@@ -481,14 +481,14 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-platinum/40 text-sm">
             <div className="flex items-center gap-2 mb-4 md:mb-0" itemScope itemType="https://schema.org/Organization">
               <Shield className="w-4 h-4 text-electric" aria-hidden="true" /> 
-              <span itemProp="name">© 2026 IronLayer. All rights reserved.</span>
-              <meta itemProp="url" content="https://ironlayer.dev" />
+              <span itemProp="name">© 2026 QuiGuard. All rights reserved.</span>
+              <meta itemProp="url" content="https://QuiGuard.dev" />
             </div>
             <div className="flex gap-6" role="navigation" aria-label="Footer navigation">
-              <Link href="/privacy" className="hover:text-platinum transition-colors" aria-label="Read IronLayer privacy policy">Privacy</Link>
-              <Link href="/terms" className="hover:text-platinum transition-colors" aria-label="Read IronLayer terms of service">Terms</Link>
-              <Link href="/security" className="hover:text-platinum transition-colors" aria-label="View IronLayer security practices">Security</Link>
-              <Link href="/docs" className="hover:text-platinum transition-colors" aria-label="Read IronLayer documentation">Docs</Link>
+              <Link href="/privacy" className="hover:text-platinum transition-colors" aria-label="Read QuiGuard privacy policy">Privacy</Link>
+              <Link href="/terms" className="hover:text-platinum transition-colors" aria-label="Read QuiGuard terms of service">Terms</Link>
+              <Link href="/security" className="hover:text-platinum transition-colors" aria-label="View QuiGuard security practices">Security</Link>
+              <Link href="/docs" className="hover:text-platinum transition-colors" aria-label="Read QuiGuard documentation">Docs</Link>
             </div>
           </div>
         </footer>

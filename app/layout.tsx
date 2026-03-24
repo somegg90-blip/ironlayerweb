@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IronLayer",
+  title: "QuiGuard",
   description: "The Security Layer For Generative AI.",
 };
 

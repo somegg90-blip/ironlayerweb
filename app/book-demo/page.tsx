@@ -21,7 +21,7 @@ export default function BookDemoPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold mb-1 gradient-text">Book a Technical Pilot</h1>
-              <p className="text-platinum/60">Schedule a 30-minute call to configure IronLayer for your specific security needs.</p>
+              <p className="text-platinum/60">Schedule a 30-minute call to configure QuiGuard for your specific security needs.</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function BookDemoPage() {
             width="100%" 
             height="100%" 
             frameBorder="0"
-            title="Schedule a Demo with IronLayer"
+            title="Schedule a Demo with QuiGuard"
             className="relative z-10 bg-obsidian"
           ></iframe>
         </div>

@@ -9,29 +9,29 @@ export default function TermsPage() {
           
           <section>
             <h2 className="text-xl font-semibold text-platinum mb-3">1. Agreement Overview</h2>
-            <p>Welcome to IronLayer ("Company," "we," "us," "our"). These Terms of Service ("Terms") govern your access to and use of the IronLayer software, website, and related services (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms.</p>
+            <p>Welcome to QuiGuard ("Company," "we," "us," "our"). These Terms of Service ("Terms") govern your access to and use of the QuiGuard software, website, and related services (collectively, the "Service"). By accessing or using the Service, you agree to be bound by these Terms.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-platinum mb-3">2. License Grants</h2>
             <h3 className="font-medium text-platinum mt-4">2.1 Open Source Core (Self-Hosted)</h3>
-            <p>The core IronLayer proxy software is provided under the MIT License. You are free to use, modify, and distribute the core software in accordance with that license. This license grants you no rights to the proprietary features, dashboard, or cloud infrastructure.</p>
+            <p>The core QuiGuard proxy software is provided under the MIT License. You are free to use, modify, and distribute the core software in accordance with that license. This license grants you no rights to the proprietary features, dashboard, or cloud infrastructure.</p>
             
             <h3 className="font-medium text-platinum mt-4">2.2 Paid Services (Cloud & Professional)</h3>
-            <p>Access to the IronLayer Cloud Dashboard, Audit Logs, SSO, and Professional Setup Services ("Paid Features") is granted under a limited, non-exclusive, non-transferable subscription license. This license is valid only for the duration of your paid subscription.</p>
+            <p>Access to the QuiGuard Cloud Dashboard, Audit Logs, SSO, and Professional Setup Services ("Paid Features") is granted under a limited, non-exclusive, non-transferable subscription license. This license is valid only for the duration of your paid subscription.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-platinum mb-3">3. Service Description & Security Tooling</h2>
             <h3 className="font-medium text-platinum mt-4">3.1 Nature of Service</h3>
-            <p>IronLayer is a security tooling layer designed to sanitize data prompts and responses for Large Language Models (LLMs). It acts as a reverse proxy to detect and mask Personally Identifiable Information (PII).</p>
+            <p>QuiGuard is a security tooling layer designed to sanitize data prompts and responses for Large Language Models (LLMs). It acts as a reverse proxy to detect and mask Personally Identifiable Information (PII).</p>
             
             <h3 className="font-medium text-platinum mt-4">3.2 No Compliance Guarantee</h3>
-            <p><strong>CRITICAL:</strong> While IronLayer is designed to assist with compliance frameworks (such as GDPR, HIPAA, or SOC2), <strong>we do not guarantee compliance.</strong></p>
+            <p><strong>CRITICAL:</strong> While QuiGuard is designed to assist with compliance frameworks (such as GDPR, HIPAA, or SOC2), <strong>we do not guarantee compliance.</strong></p>
             <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-              <li>IronLayer is a probabilistic tool, not a legal guarantee.</li>
+              <li>QuiGuard is a probabilistic tool, not a legal guarantee.</li>
               <li>You are solely responsible for determining whether the Service meets your specific regulatory requirements.</li>
-              <li>Use of IronLayer does not indemnify you against regulatory fines or data breaches.</li>
+              <li>Use of QuiGuard does not indemnify you against regulatory fines or data breaches.</li>
             </ul>
           </section>
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-platinum mb-3">5. Limitation of Liability</h2>
-            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IRONLAYER'S TOTAL LIABILITY TO YOU FOR ANY DAMAGES ARISING FROM THE USE OF THE SERVICE SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO IRONLAYER IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM. IN NO EVENT SHALL IRONLAYER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR BUSINESS INTERRUPTION.</p>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, QuiGuard'S TOTAL LIABILITY TO YOU FOR ANY DAMAGES ARISING FROM THE USE OF THE SERVICE SHALL NOT EXCEED THE AMOUNT PAID BY YOU TO QuiGuard IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM. IN NO EVENT SHALL QuiGuard BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR BUSINESS INTERRUPTION.</p>
           </section>
 
           <section>
