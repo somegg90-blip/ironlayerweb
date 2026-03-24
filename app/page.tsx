@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { DemoSandbox } from "@/components/DemoSandbox"; // ✅ Added DemoSandbox import
 import { Shield, Zap, Lock, ArrowRight, Github, Database, Cpu, CheckCircle, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
@@ -351,6 +352,12 @@ export default function Home() {
                 </ul>
               </div>
             </div>
+
+            {/* ✅ ADDED: Demo Sandbox Component - Interactive AEO Engagement */}
+            <div className="mt-12">
+              <DemoSandbox />
+            </div>
+            
           </div>
         </section>
 
