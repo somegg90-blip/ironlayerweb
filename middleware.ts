@@ -2,6 +2,11 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
+  // 1. Skip middleware for the callback route itself to avoid race conditions
+  if (request.nextUrl.pathname.startsWith('/auth/callback')) {
+    return NextResponse.next()
+  }
+
   let supabaseResponse = NextResponse.next({
     request,
   })
@@ -27,17 +32,12 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  // IMPORTANT: Avoid writing any logic between createServerClient and
-  // supabase.auth.getUser(). A simple mistake could make it very hard to debug
-  // issues with users being randomly logged out.
-
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
   // PROTECTED ROUTES LOGIC
-  // If user is not logged in and tries to access /checkout, redirect to /login
-  if (!user && request.nextUrl.pathname.startsWith('/checkout/setup')) {
+  if (!user && request.nextUrl.pathname.startsWith('/checkout')) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     url.searchParams.set('redirect', request.nextUrl.pathname) 
