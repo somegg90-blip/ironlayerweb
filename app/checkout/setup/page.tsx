@@ -22,7 +22,7 @@ export default async function CheckoutSetupPage() {
         <p className="text-platinum/60 mb-4 text-sm">Logged in as: <strong>{user.email}</strong></p>
         
         <div className="p-6 bg-obsidian rounded-lg mb-6">
-          <h2 className="text-lg font-semibold text-electric mb-4">Pilot Setup Package ($1,000)</h2>
+          <h2 className="text-lg font-semibold text-electric mb-4">Pilot Setup Package ($500)</h2>
           <ul className="text-left text-sm text-platinum/70 space-y-2 mb-4">
             <li>✅ 1-Hour Technical Consultation</li>
             <li>✅ Custom Policy Configuration</li>
