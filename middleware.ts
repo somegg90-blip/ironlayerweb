@@ -36,11 +36,37 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // PROTECTED ROUTES LOGIC
-  if (!user && request.nextUrl.pathname.startsWith('/checkout')) {
+  // ============================================================
+  // Protected Routes — require authentication
+  // ============================================================
+  const protectedRoutes = [
+    '/dashboard',       // Audit logs dashboard (sensitive data)
+    '/checkout',        // Payment / subscription management
+  ]
+
+  const isProtected = protectedRoutes.some(route =>
+    request.nextUrl.pathname.startsWith(route)
+  )
+
+  if (!user && isProtected) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
-    url.searchParams.set('redirect', request.nextUrl.pathname) 
+    url.searchParams.set('redirect', request.nextUrl.pathname)
+    return NextResponse.redirect(url)
+  }
+
+  // ============================================================
+  // Optional: Redirect logged-in users away from auth pages
+  // (prevents "you're already logged in" friction)
+  // ============================================================
+  const authRoutes = ['/login', '/signup']
+  const isAuthPage = authRoutes.some(route =>
+    request.nextUrl.pathname.startsWith(route)
+  )
+
+  if (user && isAuthPage) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 
