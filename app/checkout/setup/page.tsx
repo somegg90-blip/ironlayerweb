@@ -7,7 +7,7 @@ const plan = {
   name: "Pilot Setup",
   price: "$350",
   originalPrice: "$500",
-  discount: "40% launch discount",
+  discount: "30% launch discount",
   period: "One-time",
   description: "Fast-track your QuiGuard deployment with hands-on expert help. Ship in hours, not weeks.",
   features: [
