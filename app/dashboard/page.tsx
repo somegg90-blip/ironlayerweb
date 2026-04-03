@@ -116,12 +116,10 @@ export default function SecureLedgerDashboard() {
   // Data Fetching
   // ============================================================
 
-  const proxyUrl = process.env.NEXT_PUBLIC_PROXY_URL || "http://localhost:8000"
-
   async function fetchStats() {
     setStatsLoading(true)
     try {
-      const res = await fetch(`${proxyUrl}/api/audit-stats?hours=${hoursRange}`, { cache: "no-store" })
+      const res = await fetch(`/api/compliance?type=stats&hours=${hoursRange}`, { cache: "no-store" })
       if (!res.ok) throw new Error("Failed to fetch stats")
       const data = await res.json()
       setStats(data)
@@ -136,7 +134,7 @@ export default function SecureLedgerDashboard() {
     setLoading(true)
     setError(null)
     try {
-      let url = `${proxyUrl}/api/audit-logs?limit=${pageSize}&offset=${page * pageSize}`
+      let url = `/api/compliance?type=logs&limit=${pageSize}&offset=${page * pageSize}`
       if (eventFilter !== "all") url += `&event_type=${eventFilter}`
       if (riskOnly) url += `&risk_only=true`
       if (hoursRange) url += `&hours=${hoursRange}`
