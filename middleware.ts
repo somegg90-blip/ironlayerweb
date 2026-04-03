@@ -1,12 +1,7 @@
-import { createServerClient } from '@supabase/ssr'
-import { NextResponse, type NextRequest } from 'next/server'
+import { createServerClient } from "@supabase/ssr"
+import { NextResponse, type NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
-  // 1. Skip middleware for the callback route itself to avoid race conditions
-  if (request.nextUrl.pathname.startsWith('/auth/callback')) {
-    return NextResponse.next()
-  }
-
   let supabaseResponse = NextResponse.next({
     request,
   })
@@ -20,7 +15,9 @@ export async function middleware(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          )
           supabaseResponse = NextResponse.next({
             request,
           })
@@ -36,38 +33,25 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // ============================================================
-  // Protected Routes — require authentication
-  // ============================================================
-  const protectedRoutes = [
-    '/dashboard',       // Audit logs dashboard (sensitive data)
-    '/settings',        // API keys & subscription management
-    '/checkout',        // Payment / subscription management
-  ]
-
-  const isProtected = protectedRoutes.some(route =>
-    request.nextUrl.pathname.startsWith(route)
-  )
-
-  if (!user && isProtected) {
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
-    url.searchParams.set('redirect', request.nextUrl.pathname)
-    return NextResponse.redirect(url)
+  // Protected routes — require authentication
+  if (
+    request.nextUrl.pathname.startsWith("/dashboard") ||
+    request.nextUrl.pathname.startsWith("/settings") ||
+    request.nextUrl.pathname.startsWith("/policy") ||
+    request.nextUrl.pathname.startsWith("/checkout") ||
+    request.nextUrl.pathname === "/pricing"
+  ) {
+    if (!user) {
+      const url = request.nextUrl.clone()
+      url.pathname = "/login"
+      return NextResponse.redirect(url)
+    }
   }
 
-  // ============================================================
-  // Optional: Redirect logged-in users away from auth pages
-  // (prevents "you're already logged in" friction)
-  // ============================================================
-  const authRoutes = ['/login', '/signup']
-  const isAuthPage = authRoutes.some(route =>
-    request.nextUrl.pathname.startsWith(route)
-  )
-
-  if (user && isAuthPage) {
+  // Redirect logged-in users away from auth pages
+  if (user && (request.nextUrl.pathname === "/login" || request.nextUrl.pathname === "/signup")) {
     const url = request.nextUrl.clone()
-    url.pathname = '/dashboard'
+    url.pathname = "/dashboard"
     return NextResponse.redirect(url)
   }
 
@@ -76,6 +60,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }

@@ -9,6 +9,7 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  Sliders,
 } from "lucide-react"
 
 export async function Navbar() {
@@ -72,6 +73,14 @@ export async function Navbar() {
                 </Button>
               </Link>
 
+              {/* Policy Editor */}
+              <Link href="/policy">
+                <Button variant="ghost" size="sm" className="text-platinum/60 hover:text-platinum">
+                  <Sliders className="w-4 h-4" />
+                  <span className="hidden sm:inline">Policy</span>
+                </Button>
+              </Link>
+
               {/* Divider */}
               <div className="w-px h-5 bg-white/10 mx-1" />
 
@@ -110,6 +119,14 @@ export async function Navbar() {
                   >
                     <Settings className="w-4 h-4" />
                     Settings &amp; API Keys
+                  </Link>
+
+                  <Link
+                    href="/policy"
+                    className="flex items-center gap-2.5 px-3 py-2 text-sm text-platinum/60 hover:text-platinum hover:bg-white/5 transition-colors"
+                  >
+                    <Sliders className="w-4 h-4" />
+                    Policy Editor
                   </Link>
 
                   <Link
